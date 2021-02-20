@@ -34,7 +34,6 @@ const tutorSchema =  new Schema({
         type:Number,
         required: true
     }
-
 },
 {
     timestamps:true

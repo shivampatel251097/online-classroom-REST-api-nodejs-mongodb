@@ -25,7 +25,6 @@ studentRouter.route('/')
             res.status(404).end("Student Profile already created. Please update for any changes!!");
         }
         Student.create(req.body)
-        console.log(req.body)
         res.status(200).json("students profile created successfully");
     },(err)=>next(err))
     .catch((err)=>next(err));
