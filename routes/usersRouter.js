@@ -6,7 +6,7 @@ var User = require('../models/user');
 var userRouter = express.Router();
 userRouter.use(bodyParser.json());
 
-/* GET users listing. */
+//get all users
 
 userRouter.get('/', function(req, res, next) {
     User.find({})
