@@ -2,6 +2,7 @@ var mongoose =  require('mongoose');
 const { model } = require('./user');
 var Schema =  mongoose.Schema;
 
+//creating Tutor Schema
 const tutorSchema =  new Schema({
     _id:{
         type:String,
