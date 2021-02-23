@@ -7,7 +7,7 @@ var authenticate = require('../authenticate');
 var userRouter = express.Router();
 userRouter.use(bodyParser.json());
 
-//get all users
+//get all users in the user document
 
 userRouter.get('/',authenticate.verifyUser, function(req, res, next) {
   console.log('Req.session',req.session);
@@ -30,7 +30,7 @@ userRouter.get('/',authenticate.verifyUser, function(req, res, next) {
 //     .catch((err)=>next(err));
 // });
 
-//route for sign up
+//route for sign up for new user
 userRouter.post('/signup', (req,res,next) => {
   User.register(new User({username: req.body.username}),
    req.body.password, (err,user)=>{
