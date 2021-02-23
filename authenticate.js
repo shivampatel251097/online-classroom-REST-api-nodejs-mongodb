@@ -23,6 +23,7 @@ var opts = {};
 opts.jwtFromRequest = ExtractJwt.fromAuthHeaderAsBearerToken();
 opts.secretOrKey = config.secretKey;
 
+//This handler verifies the token for every route in which we are using authenticate.verifyUser function
 exports.jwtPassport = passport.use(new JwtStrategy(opts,(jwt_payload,done)=>{
     console.log("JWT payload:", jwt_payload);
     User.findOne({_id: jwt_payload._id},(err,user) =>{
