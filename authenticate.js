@@ -7,6 +7,8 @@ var config = require('./config');
 
 //Process to sign and create JWT Token
 exports.local = passport.use(new LocalStrategy(User.authenticate()));
+
+//serialize and deserialize user is used to store info of logged in user in req.session 
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
